@@ -1,0 +1,498 @@
+body {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+$colGups: 0;
+$columns: 12;
+//===========  mixins start ===========//
+
+// columns
+$columns: 12;
+$col: $columns;
+
+@mixin col($col, $columns) {
+  width: percentage($col/$columns);
+}
+
+//===========  mixins end ===========//
+
+@mixin col-create() {
+  @while $col > 0 {
+    .col-#{$col} {
+      @include col($col, $columns);
+    }
+
+    $col: $col - 1;
+  }
+}
+
+.container {
+  max-width: 1585px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 55px 45px 37px;
+}
+
+a {
+  color: inherit;
+}
+
+.row {
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+}
+
+[class^="col"] {
+  width: 100%;
+  min-height: 1px;
+}
+
+@include col-create();
+
+@mixin scroll {
+  width: 8px;
+    height: 62px;
+    background-color: #ebebeb;
+    border-radius: 4px;
+    position: absolute;
+    right: 2px;
+}
+
+@mixin skill {
+  display: inline-block;
+        font-size: 14px;
+        line-height: 1.36;
+        color: #fff;
+        background-color: #a5bbc3;
+        padding: 5px 10px;
+        border-radius: 5px;
+}
+
+.hero {
+  background-color: #fff;
+  padding: 33px 31px 29px 33px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #595959;
+
+  &__position {
+    font-size: 24px;
+    color: #f00c82;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  &__company {
+    color: #9193a2;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__location {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__skills {
+    padding: 15px 0;
+
+    span {
+      @include skill;
+    }
+
+    span + span {
+      margin-left: 10px;
+    }
+  }
+
+  &__about {
+    font-size: 14px;
+    line-height: 1.43;
+    color: #595959;
+  }
+
+  &__salary {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 900;
+    text-align: right;
+    color: #f00c82;
+  }
+
+  &__date {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #9193a2;
+  }
+
+  &__buttons {
+    padding-top: 56px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    color: #6bbe10;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #6bbe10;
+    background: none;
+    border-radius: 5px;
+    width: 168px;
+
+    &-text {
+      font-size: 12px;
+      color: #9193a2;
+    }
+  }
+
+  &__switch {
+    border: none;
+    background: none;
+    height: 17px;
+    padding: 0 12px 0 18px;
+  }
+}
+
+.list {
+  padding: 5px 11px 24px;
+  background-color: #fff;
+  border-radius: 0 0 0 5px;
+  border-right: 1px solid #595959;
+  position: relative;
+
+  &__item {
+    font-size: 14px;
+    line-height: 56px;
+    position: relative;
+    padding-left: 37px;
+    border-radius: 5px;
+    background-color: transparent;
+
+    &--bold {
+      font-weight: 800;
+    }
+
+    &--circle {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: #6bbe10;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 15px;
+    }
+
+    &--crossout {
+      width: 43%;
+      height: 1px;
+      background-color: #f00c82;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12%;
+    }
+
+    &--active {
+      background: linear-gradient(to bottom, #e9ffc2, #e0ffd4);
+    }
+  }
+  &__scroll {
+    @include scroll;
+    top: 100px;
+  }
+}
+
+.chat {
+  background-color: #fff;
+  padding-top: 13px;
+  position: relative;
+  border-radius: 0 0 5px 0;
+
+  &__info {
+    padding: 0 11px 12px 15px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: #f00c82;
+    font-weight: 800;
+    line-height: 2;
+  }
+
+  &__location {
+    font-size: 12px;
+    vertical-align: middle;
+    line-height: 1.2;
+  }
+
+  &__expirience {
+    color: #9193a2;
+  }
+
+  &__salary {
+    font-size: 14px;
+    font-weight: 900;
+    color: #f00c82;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: #9193a2;
+    line-height: 2;
+  }
+
+  &__start {
+    padding: 15px 26px 0 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__user {
+    max-width: 450px;
+
+    &--junior {
+      align-self: flex-end;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: 2.5;
+    font-weight: 800;
+
+    &--junior {
+      text-align: right;
+    }
+  }
+
+  &__message {
+    padding: 18px;
+    border: 1px solid #9193a2;
+    border-radius: 5px;
+    color: #595959;
+    font-size: 14px;
+    line-height: 1.43;
+
+    &--grey {
+      border: transparent;
+      background-color: #f2f2f2;
+    }
+  }
+
+  &__date-message {
+    font-size: 12px;
+    line-height: 2;
+    color: #9193a2;
+
+    &--junior {
+      text-align: right;
+    }
+  }
+
+  &__writting {
+    margin-top: 95px;
+    box-shadow: 0 -5px 21px -10px rgba(0, 0, 0, 0.26893);
+    max-height: 155px;
+    padding: 26px 0 22px 28px;
+    position: relative;
+  }
+
+  &__text {
+    width: 500px;
+    height: 40px;
+    resize: none;
+    border: none;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #9193A2;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #9193A2;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #9193A2;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  &__submit {
+    background-color: #6bbe10;
+    color: #fff;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 5px;
+    margin-top: 24px;
+  }
+
+  &__complaint {
+    position: absolute;
+    right: 27px;
+    bottom: 16px;
+    font-size: 12px;
+    color: #f00c82;
+  }
+
+  &__scroll {
+    @include scroll;
+    top: 155px;
+  }
+}
+
+.positions {
+  background-color: #fff;
+  margin-left: 22px;
+  border-radius: 5px;
+
+  &__title {
+    color: #9193A2;
+    font-size: 12px;
+    padding: 16px 0 16px 20px;
+  }
+
+  &__item {
+    height: 67px;
+    border-top: 1px solid #E7E7E7;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    align-items: center;
+
+    &--active {
+      color: #9FA5CD;
+    }
+
+    &--quantity {
+      display: inline-block;
+      background-color: #f00c82;
+      color: #fff;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+    }
+  }
+}
+
+.skills {
+  background-color: #fff;
+  width: 555px;
+  margin-top: 178px;
+  margin-left: 84px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 21px rgba(0, 0, 0, 0.26893);
+  position: relative;
+
+  &__close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__add {
+    padding: 27px 45px 21px;
+    border-bottom: 1px solid #9193A2;
+
+    &-text {
+      color: #9193A2;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    &-add {
+      padding-top: 10px;
+      span {
+        @include skill;
+      }
+
+      span + span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 1.5;
+    padding-bottom: 13px;
+  }
+
+  &__new {
+    padding: 21px 45px;
+
+    &-add {
+      padding-bottom: 73px;
+      span {
+        @include skill;
+      }
+
+      span + span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__send {
+    background-color: #6bbe10;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    line-height: 42px;
+    padding: 0 30px;
+  }
+
+  &__reset {
+    line-height: 40px;
+    border: 1px solid #6bbe10;
+    border-radius: 5px;
+    color: #6bbe10;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0 30px;
+    margin-left: 10px;
+  }
+  
+}
