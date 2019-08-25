@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link href="css/jquery.btnswitch.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
@@ -63,12 +64,10 @@
               </div>
             </div>
             <div class="hero__buttons">
-              <button class="hero__btn">Добавить навыки</button>
-               
-                <svg height="17" width="30"class="hero__switch">
-                  <use xlink:href="#switch"></use>
-                </svg>
-             
+              <button class="hero__btn" id="add-skills">Добавить навыки</button>
+
+              <div id="demo"></div>
+
               <span class="hero__btn-text">Активная вакансия</span>
             </div>
           </div>
@@ -80,66 +79,86 @@
               <!-- start of section list -->
 
               <div class="list">
-                <ul>
-                  <li class="list__item list__item--bold">
+                <ul id="position-list">
+                  <li class="list__item list__item--bold" rel="1">
                     <a href="#">
                       <span class="list__item--circle"></span>
                       PHP разработчик, Laravel
                     </a>
                   </li>
-                  <li class="list__item list__item--bold">
+                  <li class="list__item list__item--bold" rel="2">
                     <a href="#">
                       <span class="list__item--circle"></span>
                       Junior PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="3">
                     <a href="#">
                       Senior PHP
                     </a>
                   </li>
-                  <li class="list__item list__item--active">
+                  <li class="list__item list__item--active" rel="4">
                     <a href="#">
                       Junior PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="5">
                     <a href="#">
                       PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="6">
                     <a href="#">
                       <span class="list__item--crossout"></span>
                       разработчик PHP
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="7">
                     <a href="#">
                       Junior PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="8">
                     <a href="#">
                       Senior PHP
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="9">
                     <a href="#">
                       Junior PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="10">
                     <a href="#">
                       PHP разработчик
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="11">
                     <a href="#">
                       разработчик PHP
                     </a>
                   </li>
-                  <li class="list__item">
+                  <li class="list__item" rel="12">
+                    <a href="#">
+                      Junior PHP разработчик
+                    </a>
+                  </li>
+                  <li class="list__item" rel="13">
+                    <a href="#">
+                      PHP разработчик, Laravel
+                    </a>
+                  </li>
+                  <li class="list__item" rel="14">
+                    <a href="#">
+                      Junior PHP разработчик
+                    </a>
+                  </li>
+                  <li class="list__item" rel="15">
+                    <a href="#">
+                      Senior PHP
+                    </a>
+                  </li>
+                  <li class="list__item" rel="16">
                     <a href="#">
                       Junior PHP разработчик
                     </a>
@@ -154,55 +173,1288 @@
               <!-- start of section chat -->
 
               <div class="chat">
-                <div class="chat__info">
-                  <div>
-                    <h2 class="chat__title">
-                      Junior PHP разработчик
-                    </h2>
-                    <p class="chat__location">
-                      <img src="img/marker.png" alt="marker" />
-                      Каменец-Подольский
-                      <span class="chat__expirience">7 лет опыта</span>
-                    </p>
+                <div class="chat-window" id="chat-1">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        PHP разработчик, Laravel
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">5 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
                   </div>
-                  <div>
-                    <p class="chat__salary">$1200</p>
-                    <p class="chat__date">20 Фев 2017</p>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div class="chat__start">
-                  <div class="chat__user">
-                    <p class="chat__name chat__name--you">Вы</p>
-                    <p class="chat__message">
-                      I have just come across your profile on LinkedIn and
-                      thought your profile looks very interesting to Sales
-                      manager position that we are working on at the moment.
-                      This position is at a leading FinTech company from London,
-                      which has an office in Kharkiv. Would you be interested in
-                      hearing more about this opportunity?
-                    </p>
-                    <p class="chat__date-message">
-                      13:32, 20 Фев 2017
-                    </p>
+                <div class="chat-window" id="chat-2">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">10 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$700</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
                   </div>
-                  <div class="chat__user chat__user--junior">
-                    <p class="chat__name chat__name--junior">Junior PHP разработчик</p>
-                    <p class="chat__message chat__message--grey">
-                      Hello. Yes I want to hear more information about this
-                      position. Yes I wantHello. Yes I want to hear more
-                      information about this position. to hear more information
-                      about this position.
-                    </p>
-                    <p class="chat__date-message chat__date-message--junior">
-                      13:32, 20 Фев 2017
-                    </p>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-3">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Senior PHP
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$2500</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-4">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-5">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-6">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        разработчик PHP
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        разработчик PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        разработчик PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-7">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-8">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Senior PHP
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-9">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-10">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-11">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        разработчик PHP
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        разработчик PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        разработчик PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-12">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-13">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        PHP разработчик, Laravel
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">5 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        PHP разработчик, Laravel
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-14">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">10 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$700</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-15">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Senior PHP
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$2500</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Senior PHP
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chat-window" id="chat-16">
+                  <div class="chat__info">
+                    <div>
+                      <h2 class="chat__title">
+                        Junior PHP разработчик
+                      </h2>
+                      <p class="chat__location">
+                        <img src="img/marker.png" alt="marker" />
+                        <span class="position-city">Каменец-Подольский</span>
+                        <span class="chat__experience">7 лет опыта</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p class="chat__salary">$1200</p>
+                      <p class="chat__date">20 Фев 2017</p>
+                    </div>
+                  </div>
+
+                  <div class="chat__start">
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt blanditiis facere atque fugiat
+                        aspernatur? Modi quia quos velit impedit mollitia.
+                      </p>
+                      <p class="chat__date-message">
+                        13:35, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dolorem, quia. Labore animi odio dolorum modi
+                        alias ea, delectus enim nemo officia aliquam blanditiis
+                        at illum!
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:40, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user from">
+                      <p class="chat__name chat__name--from">Вы</p>
+                      <p class="chat__message">
+                        I have just come across your profile on LinkedIn and
+                        thought your profile looks very interesting to Sales
+                        manager position that we are working on at the moment.
+                        This position is at a leading FinTech company from
+                        London, which has an office in Kharkiv. Would you be
+                        interested in hearing more about this opportunity?
+                      </p>
+                      <p class="chat__date-message">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
+                    <div class="chat__user chat__user--to">
+                      <p class="chat__name chat__name--to">
+                        Junior PHP разработчик
+                      </p>
+                      <p class="chat__message chat__message--to">
+                        Hello. Yes I want to hear more information about this
+                        position. Yes I wantHello. Yes I want to hear more
+                        information about this position. to hear more
+                        information about this position.
+                      </p>
+                      <p class="chat__date-message chat__date-message--to">
+                        13:32, 20 Фев 2017
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 <div class="chat__writting">
                   <form action="" method="">
-                    <textarea name="message" class="chat__text" placeholder="Введите сообщение"></textarea>
+                    <textarea
+                      name="message"
+                      class="chat__text"
+                      placeholder="Введите сообщение"
+                    ></textarea>
                     <input
                       type="submit"
                       class="chat__submit"
@@ -228,34 +1480,28 @@
 
             <ul>
               <li class="positions__item row">
-                
-                  <p class="col-9">
-                    <a href="#">
-                      Дизайнер интерьера, помощник дизайнера
-                    </a>
-                  </p>
-                  <span class="positions__item--quantity">12</span>
-                
+                <p class="col-9">
+                  <a href="#">
+                    Дизайнер интерьера, помощник дизайнера
+                  </a>
+                </p>
+                <span class="positions__item--quantity">12</span>
               </li>
               <li class="positions__item row">
-                
-                  <p class="col-9">
-                    <a href="#">
-                      WordPress Developer
-                    </a>
-                  </p>
-                  <span class="positions__item--quantity">2</span>
-                
+                <p class="col-9">
+                  <a href="#">
+                    WordPress Developer
+                  </a>
+                </p>
+                <span class="positions__item--quantity">2</span>
               </li>
               <li class="positions__item positions__item--active row">
-               
-                  <p class="col-9">
-                    <a href="#">
-                      Junior PHP разработчик
-                    </a>
-                  </p>
-                  <span class="positions__item--quantity">2</span>
-               
+                <p class="col-9">
+                  <a href="#">
+                    Junior PHP разработчик
+                  </a>
+                </p>
+                <span class="positions__item--quantity">2</span>
               </li>
               <li class="positions__item row">
                 <a class="col-9" href="#">Бармен на круизный лайнер</a>
@@ -270,10 +1516,10 @@
 
           <!-- start of section skills -->
 
-          <div class="skills col-10">
+          <div class="skills col-10" id="skills-window">
             <div class="skills__add">
               <button class="skills__close">
-                <img src="img/close.png" alt="close">
+                <img src="img/close.png" alt="close" />
               </button>
               <h4 class="skills__title">
                 Добавление навыков
@@ -319,27 +1565,9 @@
       </div>
     </div>
 
-    <div class="visually-hidden">
-      <svg>
-        <symbol
-          width="30"
-          height="17"
-          viewBox="0 0 30 17"
-          fill="none"
-          id="switch"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="30" height="17" rx="8.5" fill="#6BBE10" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z"
-            fill="white"
-          />
-        </symbol>
-      </svg>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="js/jquery.btnswitch.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

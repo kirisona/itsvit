@@ -4,16 +4,36 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
+::-webkit-scrollbar-button {
+  background-image:url('');
+  background-repeat:no-repeat;
+  width:5px;
+  height:0px
+  }
+  
+  ::-webkit-scrollbar-track {
+  background-color:#ecedee;
+  width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color:#c4c7ca;
+  width: 8px;
+  }
+  
+  ::-webkit-resizer{
+  background-image:url('');
+  background-repeat:no-repeat;
+  width:4px;
+  height:0px
+  }
+  
+  ::-webkit-scrollbar{
+  width: 8px;
+  background: rgba(255, 255, 255, 0.0);
+  }
 
 $colGups: 0;
 $columns: 12;
@@ -44,6 +64,7 @@ $col: $columns;
   width: 100%;
   margin: 0 auto;
   padding: 30px 55px 45px 37px;
+  position: relative;
 }
 
 a {
@@ -166,6 +187,23 @@ a {
     height: 17px;
     padding: 0 12px 0 18px;
   }
+
+  #demo {
+    margin: 0 12px 0 18px;
+  }
+
+  .tgl-sw + .btn-switch {
+    width: 30px;
+    height: 17px;
+  }
+
+  .tgl-sw-light + .btn-switch {
+background-color: #6bbe10;
+  }
+
+  .tgl-sw-light-checked + .btn-switch {
+    background-color: grey;
+  }
 }
 
 .list {
@@ -174,6 +212,9 @@ a {
   border-radius: 0 0 0 5px;
   border-right: 1px solid #595959;
   position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 672px;
 
   &__item {
     font-size: 14px;
@@ -212,10 +253,6 @@ a {
       background: linear-gradient(to bottom, #e9ffc2, #e0ffd4);
     }
   }
-  &__scroll {
-    @include scroll;
-    top: 100px;
-  }
 }
 
 .chat {
@@ -231,6 +268,10 @@ a {
     justify-content: space-between;
   }
 
+  #chat-1, #chat-2, #chat-3, #chat-5, #chat-6, #chat-7, #chat-8, #chat-9, #chat-10, #chat-11, #chat-12, #chat-13, #chat-14, #chat-15, #chat-16 {
+    display: none;
+  }
+
   &__title {
     font-size: 16px;
     color: #f00c82;
@@ -244,7 +285,7 @@ a {
     line-height: 1.2;
   }
 
-  &__expirience {
+  &__experience {
     color: #9193a2;
   }
 
@@ -263,16 +304,18 @@ a {
   }
 
   &__start {
-    padding: 15px 26px 0 27px;
+    padding: 15px 26px 60px 27px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
+    height: 397px;
   }
 
   &__user {
     max-width: 450px;
 
-    &--junior {
+    &--to {
       align-self: flex-end;
     }
   }
@@ -282,7 +325,7 @@ a {
     line-height: 2.5;
     font-weight: 800;
 
-    &--junior {
+    &--to {
       text-align: right;
     }
   }
@@ -295,7 +338,7 @@ a {
     font-size: 14px;
     line-height: 1.43;
 
-    &--grey {
+    &--to {
       border: transparent;
       background-color: #f2f2f2;
     }
@@ -306,13 +349,12 @@ a {
     line-height: 2;
     color: #9193a2;
 
-    &--junior {
+    &--to {
       text-align: right;
     }
   }
 
   &__writting {
-    margin-top: 95px;
     box-shadow: 0 -5px 21px -10px rgba(0, 0, 0, 0.26893);
     max-height: 155px;
     padding: 26px 0 22px 28px;
@@ -324,6 +366,7 @@ a {
     height: 40px;
     resize: none;
     border: none;
+    outline: none;
   }
 
   ::placeholder {
@@ -366,11 +409,6 @@ a {
     bottom: 16px;
     font-size: 12px;
     color: #f00c82;
-  }
-
-  &__scroll {
-    @include scroll;
-    top: 155px;
   }
 }
 
@@ -415,11 +453,12 @@ a {
 .skills {
   background-color: #fff;
   width: 555px;
-  margin-top: 178px;
-  margin-left: 84px;
   border-radius: 5px;
   box-shadow: 0px 5px 21px rgba(0, 0, 0, 0.26893);
-  position: relative;
+  position: absolute;
+  top: 604px;
+  right: 51px;
+  display: none;
 
   &__close {
     background-color: transparent;
@@ -434,6 +473,7 @@ a {
   &__add {
     padding: 27px 45px 21px;
     border-bottom: 1px solid #9193A2;
+    position: relative;
 
     &-text {
       color: #9193A2;
@@ -496,3 +536,4 @@ a {
   }
   
 }
+

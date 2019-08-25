@@ -89,7 +89,6 @@ function watchFiles(cb) {
     gulp.watch('./**/*.scss', compileStyle);
     gulp.watch('app/**/*.html', buildHtml);
     gulp.watch('app/**/*.js', buildJs);
-
     cb();
 }
 
